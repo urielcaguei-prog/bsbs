@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForgeFlow — Dashboard</title>
+<style>
+:root{
+  --bg:#08090b;--panel:#101216;--panel2:#15171c;--border:#252832;
+  --text:#f5f5f5;--muted:#8f949f;--accent:#ff5a36;--accent2:#ff7a55;
+  --green:#37d18b;--danger:#ff5d68;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
+font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit} button{cursor:pointer}
+.app{display:flex;min-height:100vh}
+.sidebar{width:250px;border-right:1px solid var(--border);background:#0b0c0f;padding:22px 14px;position:fixed;inset:0 auto 0 0}
+.logo{font-weight:900;font-size:22px;letter-spacing:-.7px;padding:0 12px 25px}
+.logo span{color:var(--accent)}
+.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#aeb2bb;text-align:left;
+padding:11px 13px;border-radius:9px;display:flex;gap:11px;align-items:center}
+.nav button:hover,.nav button.active{background:#191b21;color:#fff}.icon{width:19px;text-align:center}
+.main{margin-left:250px;width:calc(100% - 250px);padding:32px 38px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+h1{font-size:28px;margin:0 0 6px;letter-spacing:-.8px}.sub{color:var(--muted);font-size:14px}
+.actions{display:flex;gap:10px}.btn{border:1px solid var(--border);background:#15171c;color:#fff;padding:10px 15px;border-radius:9px}
+.btn.primary{background:var(--accent);border-color:var(--accent);font-weight:700}.btn:hover{filter:brightness(1.08)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:20px}
+.metric{font-size:28px;font-weight:800;margin:10px 0 3px}.label{font-size:13px;color:var(--muted)}
+.up{color:var(--green);font-size:12px}.section{margin-top:18px;display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+.section.single{grid-template-columns:1fr}.card h2{font-size:16px;margin:0 0 17px}
+.chart{height:230px;display:flex;align-items:end;gap:8px;padding-top:15px}
+.bar{flex:1;background:linear-gradient(to top,var(--accent),#ff967a);border-radius:5px 5px 2px 2px;min-height:10px;opacity:.9}
+.chart-labels{display:flex;justify-content:space-between;color:#6f747e;font-size:11px;margin-top:8px}
+.rows{display:grid;gap:10px}.row{display:flex;align-items:center;justify-content:space-between;
+padding:12px;border:1px solid #20232b;border-radius:9px;background:#0d0f13}.row small{color:var(--muted)}
+.status{padding:5px 8px;border-radius:999px;font-size:11px;background:#123a2b;color:#65e2a6}
+.empty{border:1px dashed #30333d;padding:30px;text-align:center;border-radius:10px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}
+.modal.show{display:flex}.modalbox{width:min(620px,100%);background:#111318;border:1px solid var(--border);border-radius:14px;padding:24px}
+.modalhead{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:#aaa;font-size:22px}
+.form{display:grid;gap:13px;margin-top:20px}.form label{font-size:12px;color:#aeb2bb}.form input,.form textarea,.form select{
+width:100%;margin-top:6px;background:#0a0b0e;border:1px solid #2a2d35;color:#fff;padding:11px;border-radius:8px;outline:none}
+.form textarea{min-height:100px;resize:vertical}.toast{position:fixed;right:22px;bottom:22px;background:#171a20;border:1px solid #30343d;
+padding:13px 16px;border-radius:10px;display:none;z-index:20}.toast.show{display:block}
+.mobile{display:none}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.section{grid-template-columns:1fr}}
+@media(max-width:650px){.sidebar{display:none}.main{margin:0;width:100%;padding:22px 16px}.mobile{display:block}.grid{grid-template-columns:1fr}.top{align-items:flex-start;gap:15px}.actions{flex-wrap:wrap}.metric{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="logo">Forge<span>Flow</span></div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard"><span class="icon">⌂</span>Dashboard</button>
+    <button data-page="ebooks"><span class="icon">▤</span>E-books</button>
+    <button data-page="presentes"><span class="icon">🎁</span>Presentes</button>
+    <button data-page="perfil"><span class="icon">◉</span>Perfil</button>
+    <button data-page="produtos"><span class="icon">□</span>Produtos</button>
+    <button data-page="paginas"><span class="icon">▣</span>Páginas de Venda</button>
+    <button data-page="criativos"><span class="icon">▶</span>Criativos de Vídeo</button>
+    <button data-page="grupos"><span class="icon">◎</span>Buscar Grupos</button>
+    <button data-page="copy"><span class="icon">✎</span>Gerador de Copy</button>
+    <button data-page="hotmart"><span class="icon">↗</span>Hotmart</button>
+    <button data-page="ia"><span class="icon">✦</span>IA</button>
+    <button data-page="config"><span class="icon">⚙</span>Configurações</button>
+    <button data-page="seguranca"><span class="icon">⌑</span>Segurança</button>
+  </nav>
+</aside>
+
+<main class="main">
+  <div class="top">
+    <div><h1 id="title">Dashboard</h1><div class="sub" id="subtitle">Visão geral da sua operação.</div></div>
+    <div class="actions"><button class="btn" onclick="notify('Atualização solicitada')">Atualizar</button>
+    <button class="btn primary" onclick="openModal()">+ Criar produto</button></div>
+  </div>
+  <div id="content"></div>
+</main>
+</div>
+
+<div class="modal" id="modal">
+ <div class="modalbox">
+  <div class="modalhead"><h2>Novo produto</h2><button class="close" onclick="closeModal()">×</button></div>
+  <form class="form" onsubmit="createProduct(event)">
+   <label>Nome<input id="productName" required placeholder="Ex.: Guia de Produtividade"></label>
+   <label>Preço<input id="productPrice" type="number" min="0" step=".01" required placeholder="97.00"></label>
+   <label>Descrição<textarea id="productDesc" placeholder="Descrição do produto"></textarea></label>
+   <button class="btn primary" type="submit">Criar produto</button>
+  </form>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const state={page:"dashboard",products:[]};
+
+const pages={
+dashboard:["Dashboard","Visão geral da sua operação."],
+ebooks:["E-books","Crie e gerencie seus produtos digitais."],
+presentes:["Presentes","Gerencie bônus e entregas para clientes."],
+perfil:["Perfil","Dados da conta."],
+produtos:["Produtos","Seu catálogo de produtos."],
+paginas:["Páginas de Venda","Crie páginas para apresentar seus produtos."],
+criativos:["Criativos de Vídeo","Produza ideias e roteiros para anúncios."],
+grupos:["Buscar Grupos","Encontre comunidades relevantes através de provedores conectados."],
+copy:["Gerador de Copy","Gere textos comerciais com IA."],
+hotmart:["Hotmart","Configure a integração com sua conta Hotmart."],
+ia:["IA","Configurações e geração com inteligência artificial."],
+config:["Configurações","Preferências da aplicação."],
+seguranca:["Segurança","Sessões e proteção da conta."]
+};
+
+function render(){
+ document.getElementById("title").textContent=pages[state.page][0];
+ document.getElementById("subtitle").textContent=pages[state.page][1];
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===state.page));
+ const c=document.getElementById("content");
+ if(state.page==="dashboard") c.innerHTML=dashboard();
+ else if(state.page==="produtos") c.innerHTML=products();
+ else c.innerHTML=generic(state.page);
+}
+function dashboard(){
+ const revenue=state.products.reduce((a,p)=>a+p.price,0);
+ return `<div class="grid">
+  ${metric("Receita","R$ "+revenue.toFixed(2).replace(".",","),"Dados locais da sessão")}
+  ${metric("Vendas",state.products.length,"Sem dados simulados")}
+  ${metric("Produtos",state.products.length,"Criados nesta sessão")}
+  ${metric("Compradores","—","Aguardando vendas reais")}
+ </div>
+ <div class="section">
+  <div class="card"><h2>Receita</h2>
+   ${state.products.length?`<div class="chart">${state.products.map(p=>`<div class="bar" style="height:${Math.max(12,Math.min(100,p.price))}%"></div>`).join("")}</div><div class="chart-labels"><span>Produtos criados</span><span>Agora</span></div>`:`<div class="empty">Ainda não existem vendas reais registradas.</div>`}
+  </div>
+  <div class="card"><h2>Atividade recente</h2>
+   ${state.products.length?`<div class="rows">${state.products.slice(-5).reverse().map(p=>`<div class="row"><div><b>${esc(p.name)}</b><br><small>Produto criado agora</small></div><span class="status">Criado</span></div>`).join("")}</div>`:`<div class="empty">Nenhuma atividade.</div>`}
+  </div>
+ </div>`;
+}
+function metric(a,b,c){return `<div class="card"><div class="label">${a}</div><div class="metric">${b}</div><div class="label">${c}</div></div>`}
+function products(){
+ return `<div class="card"><h2>Produtos <button class="btn primary" style="float:right" onclick="openModal()">+ Novo</button></h2>
+ ${state.products.length?`<div class="rows">${state.products.map((p,i)=>`<div class="row"><div><b>${esc(p.name)}</b><br><small>${esc(p.desc||"Sem descrição")} · R$ ${p.price.toFixed(2).replace(".",",")}</small></div><button class="btn" onclick="removeProduct(${i})">Excluir</button></div>`).join("")}</div>`:`<div class="empty">Você ainda não criou produtos. Clique em “+ Novo” para começar.</div>`}
+ </div>`;
+}
+function generic(page){
+ const messages={
+ ebooks:"O módulo de E-books está pronto para receber o fluxo de criação com IA.",
+ presentes:"Nenhum presente cadastrado.",
+ perfil:"Conta ativa. Conecte este frontend ao backend para persistir os dados.",
+ paginas:"Nenhuma página de venda criada.",
+ criativos:"Nenhum criativo criado.",
+ grupos:"Nenhuma fonte de grupos conectada.",
+ copy:"Use o gerador para criar uma nova copy.",
+ hotmart:"Hotmart desconectada. Configure OAuth no backend antes de sincronizar.",
+ ia:"Configure sua chave de IA exclusivamente no servidor.",
+ config:"As preferências devem ser persistidas no backend.",
+ seguranca:"Nenhuma informação de segurança será inventada nesta interface."
+ };
+ return `<div class="card"><h2>${pages[page][0]}</h2><div class="empty">${messages[page]||"Nenhum dado disponível."}</div></div>`;
+}
+function openModal(){document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function createProduct(e){
+ e.preventDefault();
+ const name=document.getElementById("productName").value.trim();
+ const price=Number(document.getElementById("productPrice").value);
+ const desc=document.getElementById("productDesc").value.trim();
+ state.products.push({name,price,desc});
+ closeModal();e.target.reset();notify("Produto criado nesta sessão");render();
+}
+function removeProduct(i){state.products.splice(i,1);notify("Produto removido");render()}
+function notify(text){const t=document.getElementById("toast");t.textContent=text;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+document.getElementById("nav").addEventListener("click",e=>{
+ const b=e.target.closest("button[data-page]");if(!b)return;state.page=b.dataset.page;render();
+});
+render();
+</script>
+</body>
+</html>
