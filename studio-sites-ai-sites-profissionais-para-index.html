@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Sites AI | Sites Profissionais para Empresas e Comércios</title>
+  <meta name="description" content="Criação de sites profissionais, rápidos e responsivos para empresas, lojas e prestadores de serviço. Solicite seu orçamento pelo WhatsApp.">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:title" content="Studio Sites AI | Seu negócio com presença digital profissional">
+  <meta property="og:description" content="Sites modernos, rápidos e feitos para transformar visitantes em clientes. Fale agora pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #07111f;
+      --blue: #2563eb;
+      --cyan: #22d3ee;
+      --light: #f5f8fc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: #172033;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: "Sora", sans-serif;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at 80% 18%, rgba(34, 211, 238, .17), transparent 28%),
+        radial-gradient(circle at 10% 85%, rgba(37, 99, 235, .21), transparent 30%),
+        linear-gradient(130deg, #07111f 0%, #0b1930 57%, #0b2440 100%);
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #67e8f9, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .13);
+      backdrop-filter: blur(14px);
+    }
+
+    .shadow-soft {
+      box-shadow: 0 25px 65px rgba(15, 35, 65, .12);
+    }
+
+    .shadow-blue {
+      box-shadow: 0 16px 38px rgba(37, 99, 235, .3);
+    }
+
+    .browser {
+      transform: perspective(1200px) rotateY(-3deg) rotateX(1deg);
+      transition: transform .5s ease;
+    }
+
+    .browser:hover {
+      transform: perspective(1200px) rotateY(0) rotateX(0) translateY(-5px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card {
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 22px 52px rgba(13, 35, 66, .12);
+      border-color: #93c5fd;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-pulse::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 9999px;
+      border: 2px solid rgba(34, 197, 94, .45);
+      animation: pulse-ring 2s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(.9); opacity: .8; }
+      70%, 100% { transform: scale(1.35); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111f]/90 backdrop-blur-xl">
+    <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Navegação principal">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Studio Sites AI - início">
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 shadow-lg shadow-blue-500/20">
+          <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 7.5 12 3l7 4.5v9L12 21l-7-4.5v-9Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="font-display text-lg font-bold tracking-tight text-white">Studio <span class="text-cyan-300">Sites AI</span></span>
+      </a>
+
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="#servicos" class="text-sm font-semibold text-slate-300 transition hover:text-white">Serviços</a>
+        <a href="#beneficios" class="text-sm font-semibold text-slate-300 transition hover:text-white">Benefícios</a>
+        <a href="#processo" class="text-sm font-semibold text-slate-300 transition hover:text-white">Como funciona</a>
+        <a href="#depoimentos" class="text-sm font-semibold text-slate-300 transition hover:text-white">Depoimentos</a>
+        <a href="#faq" class="text-sm font-semibold text-slate-300 transition hover:text-white">Dúvidas</a>
+      </div>
+
+      <a href="https://wa.me/5512988148291?text=Olá!%20Quero%20um%20orçamento%20para%20criação%20de%20site." target="_blank" rel="noopener noreferrer" class="hidden items-center gap-2 rounded-xl bg-green-500 px-5 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-green-400 lg:flex">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.52 3.48A11.84 11.84 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.14 1.6 5.94L.1 24l6.33-1.66a11.87 11.87 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.23-6.17-3.45-8.42ZM12.09 21.77h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.75.98 1-3.66-.24-.38a9.86 9.86 0 0 1-1.51-5.25c0-5.45 4.44-9.88 9.89-9.88a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c0 5.44-4.44 9.87-9.88 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47a8.93 8.93 0 0 1-1.65-2.05c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.72.23 1.36.2 1.88.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/>
+        </svg>
+        Pedir orçamento
+      </a>
+
+      <button id="menuButton" class="rounded-lg p-2 text-white lg:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg id="menuOpenIcon" class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="menuCloseIcon" class="hidden h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18"/>
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-[#07111f] px-5 pb-6 lg:hidden">
+      <div class="flex flex-col gap-1 pt-3">
+        <a href="#servicos" class="mobile-link rounded-lg px-3 py-3 font-semibold text-slate-200 hover:bg-white/5">Serviços</a>
+        <a href="#beneficios" class="mobile-link rounded-lg px-3 py-3 font-semibold text-slate-200 hover:bg-white/5">Benefícios</a>
+        <a href="#processo" class="mobile-link rounded-lg px-3 py-3 font-semibold text-slate-200 hover:bg-white/5">Como funciona</a>
+        <a href="#depoimentos" class="mobile-link rounded-lg px-3 py-3 font-semibold text-slate-200 hover:bg-white/5">Depoimentos</a>
+        <a href="#faq" class="mobile-link rounded-lg px-3 py-3 font-semibold text-slate-200 hover:bg-white/5">Dúvidas</a>
+        <a href="https://wa.me/5512988148291?text=Olá!%20Quero%20um%20orçamento%20para%20criação%20de%20site." target="_blank" rel="noopener noreferrer" class="mt-3 rounded-xl bg-green-500 px-5 py-3 text-center font-extrabold text-white">Falar pelo WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero-bg grid-pattern relative min-h-screen overflow-hidden pt-20">
+      <div class="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-5 py-16 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-20">
+        <div class="relative z-10">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-200">
+            <span class="h-2 w-2 animate-pulse rounded-full bg-cyan-300"></span>
+            Sites profissionais que trabalham pelo seu negócio
+          </div>
+
+          <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Transforme sua presença digital em uma <span class="gradient-text">máquina de conquistar clientes</span>
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            Criamos sites modernos, rápidos e estratégicos para empresas, comércios e profissionais que querem transmitir confiança, aparecer melhor e vender mais todos os dias.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="https://wa.me/5512988148291?text=Olá!%20Vi%20o%20site%20e%20quero%20receber%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="shadow-blue inline-flex items-center justify-center gap-3 rounded-xl bg-blue-600 px-7 py-4 font-extrabold text-white transition hover:-translate-y-1 hover:bg-blue-500">
+              Solicitar orçamento grátis
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+            <a href="#servicos" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-7 py-4 font-bold text-white transition hover:bg-white/10">
+              Conhecer soluções
+            </a>
+          </div>
+
+          <div class="mt-10 grid max-w-xl grid-cols-3 gap-3 border-t border-white/10 pt-7">
+            <div>
+              <strong class="font-display block text-xl font-bold text-white sm:text-2xl">100%</strong>
+              <span class="mt-1 block text-xs text-slate-400 sm:text-sm">Responsivo</span>
+            </div>
+            <div>
+              <strong class="font-display block text-xl font-bold text-white sm:text-2xl">Rápido</strong>
+              <span class="mt-1 block text-xs text-slate-400 sm:text-sm">Carregamento</span>
+            </div>
+            <div>
+              <strong class="font-display block text-xl font-bold text-white sm:text-2xl">Sob medida</strong>
+              <span class="mt-1 block text-xs text-slate-400 sm:text-sm">Para sua marca</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative z-10 mx-auto w-full max-w-xl">
+          <div class="absolute -left-8 -top-8 h-44 w-44 rounded-full bg-blue-500/20 blur-3xl"></div>
+          <div class="browser glass shadow-soft relative overflow-hidden rounded-2xl p-3">
+            <div class="overflow-hidden rounded-xl bg-white">
+              <div class="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-3">
+                <span class="h-3 w-3 rounded-full bg-red-400"></span>
+                <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                <span class="h-3 w-3 rounded-full bg-green-400"></span>
+                <div class="ml-3 flex-1 rounded-md bg-white px-3 py-1 text-center text-[10px] text-slate-400">www.suaempresa.com.br</div>
+              </div>
+              <div class="relative h-[390px] overflow-hidden sm:h-[470px]">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85" alt="Painel de análise de desempenho de um site profissional" class="h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#07111f] via-[#07111f]/30 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                  <span class="rounded-full bg-cyan-300 px-3 py-1 text-xs font-extrabold text-slate-900">SUA MARCA EM DESTAQUE</span>
+                  <p class="font-display mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl">Uma experiência digital que inspira confiança.</p>
+                  <div class="mt-5 h-10 w-36 rounded-lg bg-blue-600"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass absolute -bottom-7 -left-3 flex items-center gap-3 rounded-xl p-4 shadow-xl sm:-left-9">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-green-500 text-white">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="m5 12 4 4L19 6"/>
+              </svg>
+            </span>
+            <div>
+              <strong class="block text-sm text-white">Pronto para converter</strong>
+              <span class="text-xs text-slate-300">Design + estratégia + velocidade</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-slate-100 bg-white py-7">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-5 text-center lg:px-8">
+        <span class="text-sm font-semibold text-slate-500">Soluções ideais para:</span>
+        <span class="font-display font-bold text-slate-700">Empresas</span>
+        <span class="font-display font-bold text-slate-700">Lojas</span>
+        <span class="font-display font-bold text-slate-700">Restaurantes</span>
+        <span class="font-display font-bold text-slate-700">Clínicas</span>
+        <span class="font-display font-bold text-slate-700">Prestadores de serviço</span>
+      </div>
+    </section>
+
+    <section id="servicos" class="bg-slate-50 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="text-sm font-extrabold uppercase tracking-[.2em] text-blue-600">Soluções digitais</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">O site certo para o momento do seu negócio</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">Cada projeto combina identidade visual, estratégia e tecnologia para apresentar sua empresa com profissionalismo e gerar novas oportunidades.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="service-card reveal rounded-2xl border border-slate-200 bg-white p-7">
+            <span class="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>
+              </svg>
+            </span>
+            <h3 class="mt-6 text-xl font-bold text-slate-900">Site institucional</h3>
+            <p class="mt-3 leading-7 text-slate-600">Apresente sua empresa, serviços, diferenciais e contatos em uma estrutura profissional que fortalece sua marca.</p>
+            <ul class="mt-5 space-y-2 text-sm font-semibold text-slate-700">
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Visual personalizado</li>
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Páginas estratégicas</li>
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Integração com WhatsApp</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-slate-200 bg-white p-7">
+            <span class="flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>
+              </svg>
+            </span>
+            <h3 class="mt-6 text-xl font-bold text-slate-900">Landing page</h3>
+            <p class="mt-3 leading-7 text-slate-600">Uma página direta e persuasiva para divulgar campanhas, serviços específicos e transformar acessos em contatos.</p>
+            <ul class="mt-5 space-y-2 text-sm font-semibold text-slate-700">
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Foco em conversão</li>
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Chamada para ação clara</li>
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Ideal para anúncios</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-slate-200 bg-white p-7 md:col-span-2 lg:col-span-1">
+            <span class="flex h-14 w-14 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M3 6h18l-2 9H6L3 3H1M7 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM18 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/>
+              </svg>
+            </span>
+            <h3 class="mt-6 text-xl font-bold text-slate-900">Catálogo digital</h3>
+            <p class="mt-3 leading-7 text-slate-600">Exiba produtos e serviços de forma organizada, facilitando a consulta e o pedido direto pelo WhatsApp.</p>
+            <ul class="mt-5 space-y-2 text-sm font-semibold text-slate-700">
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Produtos bem apresentados</li>
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Navegação simples</li>
+              <li class="flex gap-2"><span class="text-blue-600">✓</span> Atendimento facilitado</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="overflow-hidden bg-white py-20 sm:py-24">
+      <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
+        <div class="reveal relative">
+          <div class="absolute -left-16 top-16 h-56 w-56 rounded-full bg-blue-100 blur-3xl"></div>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85" alt="Equipe empresarial analisando estratégias para crescimento digital" class="relative h-[430px] w-full rounded-3xl object-cover shadow-soft sm:h-[540px]">
+          <div class="absolute -bottom-6 right-3 max-w-xs rounded-2xl bg-[#07111f] p-5 text-white shadow-2xl sm:right-6">
+            <div class="flex items-center gap-3">
+              <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-400/15 text-cyan-300">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 16l5-5 4 4 7-8"/><path d="M15 7h5v5"/>
+                </svg>
+              </span>
+              <div><strong class="font-display block">Mais credibilidade</strong><span class="text-sm text-slate-300">Mais chances de fechar negócio</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="text-sm font-extrabold uppercase tracking-[.2em] text-blue-600">Muito além de um visual bonito</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Seu site precisa gerar confiança antes mesmo do primeiro contato</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">Enquanto você cuida do seu negócio, seu site apresenta sua empresa, responde dúvidas e conduz o cliente até o WhatsApp — 24 horas por dia.</p>
+
+          <div class="mt-9 space-y-6">
+            <div class="flex gap-4">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">01</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Perfeito em qualquer tela</h3>
+                <p class="mt-1 leading-7 text-slate-600">Experiência fluida no celular, tablet e computador, sem perder qualidade.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">02</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Preparado para o Google</h3>
+                <p class="mt-1 leading-7 text-slate-600">Estrutura organizada e boas práticas de SEO para facilitar sua presença nas buscas.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 font-bold text-white">03</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Contato sem complicação</h3>
+                <p class="mt-1 leading-7 text-slate-600">Botões estratégicos levam o visitante diretamente para uma conversa no WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5512988148291?text=Olá!%20Quero%20entender%20qual%20site%20é%20ideal%20para%20meu%20negócio." target="_blank" rel="noopener noreferrer" class="mt-9 inline-flex items-center gap-2 font-extrabold text-blue-600 transition hover:gap-4">
+            Descobrir a melhor solução
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo" class="bg-[#07111f] py-20 text-white sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-3xl">
+          <span class="text-sm font-extrabold uppercase tracking-[.2em] text-cyan-300">Processo simples e transparente</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Do primeiro contato ao site publicado</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-300">Você participa das decisões importantes, sem precisar entender de programação ou termos técnicos.</p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
+            <span class="font-display text-4xl font-extrabold text-cyan-300/35">01</span>
+            <h3 class="mt-5 text-lg font-bold">Briefing</h3>
+            <p class="mt-3 leading-7 text-slate-400">Conversamos sobre sua empresa, público, objetivos e referências.</p>
+          </article>
+          <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
+            <span class="font-display text-4xl font-extrabold text-cyan-300/35">02</span>
+            <h3 class="mt-5 text-lg font-bold">Planejamento</h3>
+            <p class="mt-3 leading-7 text-slate-400">Definimos conteúdo, estrutura e estratégia para o projeto.</p>
+          </article>
+          <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
+            <span class="font-display text-4xl font-extrabold text-cyan-300/35">03</span>
+            <h3 class="mt-5 text-lg font-bold">Criação</h3>
+            <p class="mt-3 leading-7 text-slate-400">Desenvolvemos o visual, a navegação e os recursos do site.</p>
+          </article>
+          <article class="reveal rounded-2xl border border-cyan-300/30 bg-cyan-300/10 p-6">
+            <span class="font-display text-4xl font-extrabold text-cyan-300">04</span>
+            <h3 class="mt-5 text-lg font-bold">Publicação</h3>
+            <p class="mt-3 leading-7 text-slate-300">Após sua aprovação, o site fica pronto para receber clientes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="bg-slate-50 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="text-sm font-extrabold uppercase tracking-[.2em] text-blue-600">Confiança que gera resultado</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Uma experiência profissional do início ao fim</h2>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <figure class="reveal rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <div class="flex gap-1 text-amber-400" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="mt-5 leading-7 text-slate-600">“O novo site deixou nossa empresa muito mais profissional. Agora os clientes entendem os serviços e já entram em contato pelo WhatsApp.”</blockquote>
+            <figcaption class="mt-6 border-t border-slate-100 pt-5">
+              <strong class="block text-slate-900">Mariana Costa</strong>
+              <span class="text-sm text-slate-500">Consultoria empresarial</span>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <div class="flex gap-1 text-amber-400" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="mt-5 leading-7 text-slate-600">“Atendimento rápido, linguagem simples e um resultado acima do esperado. O site ficou ótimo no celular e combina com nossa marca.”</blockquote>
+            <figcaption class="mt-6 border-t border-slate-100 pt-5">
+              <strong class="block text-slate-900">Ricardo Almeida</strong>
+              <span class="text-sm text-slate-500">Comércio local</span>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <div class="flex gap-1 text-amber-400" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="mt-5 leading-7 text-slate-600">“Precisávamos divulgar nossos serviços de forma clara. A nova página facilitou muito os pedidos de orçamento e trouxe mais credibilidade.”</blockquote>
+            <figcaption class="mt-6 border-t border-slate-100 pt-5">
+              <strong class="block text-slate-900">Camila Martins</strong>
+              <span class="text-sm text-slate-500">Clínica de estética</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-white py-20 sm:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.75fr_1.25fr] lg:px-8">
+        <div class="reveal">
+          <span class="text-sm font-extrabold uppercase tracking-[.2em] text-blue-600">Perguntas frequentes</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Tire suas dúvidas antes de começar</h2>
+          <p class="mt-5 leading-8 text-slate-600">Ainda tem alguma pergunta? Chame no WhatsApp e receba uma orientação para o seu projeto.</p>
+          <a href="https://wa.me/5512988148291?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20a%20criação%20do%20meu%20site." target="_blank" rel="noopener noreferrer" class="mt-7 inline-flex items-center gap-2 rounded-xl bg-green-500 px-6 py-3 font-extrabold text-white transition hover:-translate-y-1 hover:bg-green-400">
+            Falar com um especialista
+          </a>
+        </div>
+
+        <div class="reveal space-y-3">
+          <details class="faq-item group rounded-xl border border-slate-200 bg-white p-5" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 font-bold text-slate-900">
+              Quanto custa para criar um site?
+              <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">+</span>
+            </summary>
+            <p class="mt-4 pr-10 leading-7 text-slate-600">O investimento varia conforme o número de páginas, recursos e complexidade do projeto. Após entender sua necessidade, enviamos uma proposta clara e personalizada, sem surpresas.</p>
+          </details>
+
+          <details class="faq-item group rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 font-bold text-slate-900">
+              O site funciona bem no celular?
+              <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">+</span>
+            </summary>
+            <p class="mt-4 pr-10 leading-7 text-slate-600">Sim. Todos os projetos são responsivos e adaptados para celulares, tablets e computadores, priorizando uma navegação rápida e confortável.</p>
+          </details>
+
+          <details class="faq-item group rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 font-bold text-slate-900">
+              Posso receber contatos pelo WhatsApp?
+              <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">+</span>
+            </summary>
+            <p class="mt-4 pr-10 leading-7 text-slate-600">Sim. Incluímos botões e chamadas estratégicas que direcionam o visitante para iniciar uma conversa diretamente com sua empresa.</p>
+          </details>
+
+          <details class="faq-item group rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 font-bold text-slate-900">
+              Preciso ter domínio e hospedagem?
+              <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">+</span>
+            </summary>
+            <p class="mt-4 pr-10 leading-7 text-slate-600">Caso ainda não tenha, orientamos você sobre domínio e hospedagem adequados. Se já possui, avaliamos a estrutura para utilizar no novo projeto.</p>
+          </details>
+
+          <details class="faq-item group rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 font-bold text-slate-900">
+              Quanto tempo leva para o site ficar pronto?
+              <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">+</span>
+            </summary>
+            <p class="mt-4 pr-10 leading-7 text-slate-600">O prazo depende do tamanho do projeto e do envio dos materiais. Após o briefing, apresentamos um cronograma objetivo com todas as etapas até a publicação.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 pb-20 lg:px-8">
+      <div class="reveal hero-bg relative mx-auto max-w-7xl overflow-hidden rounded-3xl px-6 py-14 text-center text-white shadow-2xl sm:px-12 sm:py-16">
+        <div class="absolute left-0 top-0 h-48 w-48 rounded-full bg-cyan-400/20 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 h-48 w-48 rounded-full bg-blue-500/30 blur-3xl"></div>
+        <div class="relative mx-auto max-w-3xl">
+          <span class="font-bold text-cyan-300">Seu próximo cliente pode estar pesquisando agora</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Vamos criar um site à altura do seu negócio?</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-300">Conte um pouco sobre sua empresa e receba uma proposta personalizada, sem compromisso.</p>
+          <a href="https://wa.me/5512988148291?text=Olá!%20Quero%20um%20site%20profissional%20para%20minha%20empresa.%20Podemos%20conversar?" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center gap-3 rounded-xl bg-green-500 px-8 py-4 font-extrabold text-white shadow-xl transition hover:-translate-y-1 hover:bg-green-400">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.52 3.48A11.84 11.84 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.14 1.6 5.94L.1 24l6.33-1.66a11.87 11.87 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.23-6.17-3.45-8.42ZM12.09 21.77h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.75.98 1-3.66-.24-.38a9.86 9.86 0 0 1-1.51-5.25c0-5.45 4.44-9.88 9.89-9.88a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c0 5.44-4.44 9.87-9.88 9.87Z"/>
+            </svg>
+            Solicitar orçamento pelo WhatsApp
+          </a>
+          <p class="mt-4 text-sm text-slate-400">Atendimento direto, rápido e sem compromisso.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#050c16] text-slate-400">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+      <div class="lg:col-span-2">
+        <a href="#inicio" class="flex items-center gap-3 text-white">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M5 7.5 12 3l7 4.5v9L12 21l-7-4.5v-9Z"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke-width="2"/>
+            </svg>
+          </span>
+          <span class="font-display text-lg font-bold">Studio <span class="text-cyan-300">Sites AI</span></span>
+        </a>
+        <p class="mt-5 max-w-md leading-7">Sites profissionais para empresas e comércios que desejam fortalecer a marca, gerar confiança e conquistar mais clientes pela internet.</p>
+      </div>
+
+      <div>
+        <h2 class="text-base font-bold text-white">Navegação</h2>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="#servicos" class="transition hover:text-white">Serviços</a></li>
+          <li><a href="#beneficios" class="transition hover:text-white">Benefícios</a></li>
+          <li><a href="#processo" class="transition hover:text-white">Como funciona</a></li>
+          <li><a href="#faq" class="transition hover:text-white">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-base font-bold text-white">Atendimento</h2>
+        <p class="mt-5 text-sm">Fale diretamente pelo WhatsApp:</p>
+        <a href="https://wa.me/5512988148291" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block font-bold text-green-400 transition hover:text-green-300">+55 (12) 98814-8291</a>
+        <p class="mt-3 text-sm">Orçamentos e dúvidas sobre criação de sites.</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-center text-sm sm:flex-row sm:items-center sm:justify-between sm:text-left lg:px-8">
+        <p>© <span id="year"></span> Studio Sites AI. Todos os direitos reservados.</p>
+        <p>Design estratégico para negócios que querem crescer.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5512988148291?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20criação%20de%20sites." target="_blank" rel="noopener noreferrer" class="whatsapp-pulse fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl transition hover:scale-110 hover:bg-green-400 sm:h-16 sm:w-16" aria-label="Conversar pelo WhatsApp">
+    <svg class="h-8 w-8 sm:h-9 sm:w-9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.52 3.48A11.84 11.84 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.14 1.6 5.94L.1 24l6.33-1.66a11.87 11.87 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.23-6.17-3.45-8.42ZM12.09 21.77h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.75.98 1-3.66-.24-.38a9.86 9.86 0 0 1-1.51-5.25c0-5.45 4.44-9.88 9.89-9.88a9.8 9.8 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c0 5.44-4.44 9.87-9.88 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47a8.93 8.93 0 0 1-1.65-2.05c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.72.23 1.36.2 1.88.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const openIcon = document.getElementById('menuOpenIcon');
+    const closeIcon = document.getElementById('menuCloseIcon');
+
+    function toggleMenu(forceClose = false) {
+      const willOpen = forceClose ? false : mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !willOpen);
+      openIcon.classList.toggle('hidden', willOpen);
+      closeIcon.classList.toggle('hidden', !willOpen);
+      menuButton.setAttribute('aria-expanded', String(willOpen));
+      menuButton.setAttribute('aria-label', willOpen ? 'Fechar menu' : 'Abrir menu');
+    }
+
+    menuButton.addEventListener('click', () => toggleMenu());
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(true));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) toggleMenu(true);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((element, index) => {
+      element.style.transitionDelay = `${Math.min(index % 4, 3) * 80}ms`;
+      observer.observe(element);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          document.querySelectorAll('.faq-item').forEach(other => {
+            if (other !== item) other.open = false;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
